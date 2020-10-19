@@ -24,7 +24,7 @@ export default function Home() {
           <Recommendations />
         </Content>
         <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+          Not Mercadolibre ©2020 Created by Juan De La Cruz & Luis Orozco
         </Footer>
       </Layout>
     </React.Fragment>
