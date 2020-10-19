@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Layout, Menu, Breadcrumb } from "antd";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
+import Recommendations from "../components/Recommendations";
 
 import Link from "next/link";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Navbar />
         <Content style={{ padding: "0" }}>
           <Banner />
+          <Recommendations />
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2018 Created by Ant UED

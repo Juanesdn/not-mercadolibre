@@ -17,9 +17,11 @@
 .home-banner-content-wrapper {
   height: 100%;
   margin-bottom: 40px;
-
+  text-align: center;
   h1 {
-    padding: 0 10%;
+    padding-left: 10%;
+    padding-right: 15%;
+    margin-right: 10%;
     margin-bottom: 50px;
     text-align: center;
     font-weight: 600;
@@ -27,50 +29,56 @@
     font-size: 38px;
     line-height: 1.23;
   }
+  .btn__primary {
+    margin-right: 15%;
+  }
 }
 
-.banner-layour-wrapper {
+.banner-layout-wrapper {
   margin-top: 50px;
-  height: 70vh;
+  height: 80vh;
   background-image: url("../public/bg.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-@media (min-width: 1920px) and (min-height: 1080px) {
+@media (max-width: 1740px) {
   .home-banner-content-wrapper {
     h1 {
-      padding-right: 15%;
+      margin-right: 5%;
+    }
+    .btn__primary {
+      margin-right: 0;
     }
   }
 }
 
-@media (min-width: 1366px) and (min-height: 768px) {
-  .banner-layour-wrapper {
+@media (max-width: 1366px) and (min-height: 768px) {
+  .banner-layout-wrapper {
     height: 80vh;
-  }
-
-  .home-banner-content-wrapper {
     h1 {
-      padding-right: 15%;
+      padding-right: 0;
     }
   }
 }
 
-@media (min-width: 1450px) {
-  .banner-layour-wrapper {
+@media (max-width: 1450px) {
+  .banner-layout-wrapper {
     height: 80vh;
+    h1 {
+      padding-right: 0;
+    }
   }
 }
 
 @media (max-width: 1280px) {
-  .banner-layour-wrapper {
+  .banner-layout-wrapper {
     height: 60vh;
   }
 }
 
 @media (max-width: 1100px) {
-  .banner-layour-wrapper {
+  .banner-layout-wrapper {
     height: 50vh;
   }
 }

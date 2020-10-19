@@ -4,7 +4,7 @@ import BannerImage from "./BannerImage";
 
 const Banner = () => {
   return (
-    <div className="banner-layour-wrapper">
+    <div className="banner-layout-wrapper">
       <div className="banner-layout">
         <QueueAnim
           className="home-banner-content-wrapper"
@@ -15,7 +15,7 @@ const Banner = () => {
             Compra desde la comodidad de tu casa de la manera más confiable y
             segura.
           </h1>
-          <div className="btn__primary">
+          <div key="buy-button" className="btn__primary">
             <ShoppingOutlined
               style={{
                 fontSize: "18px",
