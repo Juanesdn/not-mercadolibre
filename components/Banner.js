@@ -1,9 +1,6 @@
 import QueueAnim from "rc-queue-anim";
-import { Typography } from "antd";
 import { ShoppingOutlined } from "@ant-design/icons";
 import BannerImage from "./BannerImage";
-
-const { Title } = Typography;
 
 const Banner = () => {
   return (
@@ -14,10 +11,10 @@ const Banner = () => {
           delay={300}
           ease="easeOutQuart"
         >
-          <Title key="h1">
+          <h1 key="title">
             Compra desde la comodidad de tu casa de la manera más confiable y
             segura.
-          </Title>
+          </h1>
           <div className="btn__primary">
             <ShoppingOutlined
               style={{
