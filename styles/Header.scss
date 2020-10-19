@@ -1,0 +1,168 @@
+.menuBar {
+  display: flex;
+  margin-top: 20px;
+}
+
+.nav-item {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.menuCon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.leftMenu,
+.rightMenu {
+  padding-top: 20px;
+}
+
+.logo {
+  display: flex;
+  margin-right: 1rem;
+
+  img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.ant-menu-horizontal > .ant-menu-item {
+  border-bottom: none;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.barsMenu {
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none;
+  background: none;
+}
+
+.barsBtn {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: $selectedItemColor;
+  position: relative;
+}
+
+.barsBtn:after,
+.barsBtn:before {
+  content: attr(x);
+  width: 20px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  background: $selectedItemColor;
+}
+
+.ant-btn-primary {
+  border-color: $selectedItemColor !important;
+  &:hover {
+    background: darken($selectedItemColor, 10%) !important;
+    border-color: darken($selectedItemColor, 10%) !important;
+  }
+}
+
+.ant-btn-primary:active,
+.ant-btn-primary.active {
+  background: $selectedItemColor !important;
+  border-color: $selectedItemColor !important;
+
+  &:hover {
+    background: darken($selectedItemColor, 10%) !important;
+    border-color: darken($selectedItemColor, 10%) !important;
+  }
+}
+
+.barsBtn:after {
+  top: auto;
+  bottom: -6px;
+}
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+.barsMenu > span {
+  display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+  display: inline-block;
+  width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom-color: transparent;
+}
+
+.ant-menu-item-active {
+  border-bottom: none !important;
+  color: $selectedItemColor !important;
+
+  a {
+    color: $selectedItemColor !important;
+  }
+}
+
+.ant-menu-item-selected {
+  color: $selectedItemColor !important;
+  a {
+    color: $selectedItemColor !important;
+  }
+}
+
+.ant-menu {
+  background: transparent;
+}
+
+@media (max-width: 1090px) {
+  .menuCon {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .barsMenu {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .leftMenu,
+  .rightMenu {
+    display: none;
+  }
+
+  .logo {
+    padding: 10px 20px;
+    margin-left: 0% !important;
+    margin-right: 35vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    margin-right: 25vw;
+  }
+}
+
+@media (max-width: 570px) {
+  .logo {
+    margin-right: 20vw;
+  }
+}
