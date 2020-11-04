@@ -1,7 +1,11 @@
 import QueueAnim from "rc-queue-anim";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { Row, Col, Button, Tooltip } from "antd";
+import { Grid, Row, Col, Button, Tooltip } from "antd";
 import { ExpandAltOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { motion } from "framer-motion";
+import Slider from "./Slider";
+
+const { useBreakpoint } = Grid;
 
 const data = [
   {
@@ -22,13 +26,24 @@ const data = [
 ];
 
 const Recommendations = () => {
+  const screen = useBreakpoint();
+
   const children = data.map((item) => (
-    <Col span={8} className="col" key={item.id}>
-      <QueueAnim
-        type="bottom"
+    <Col xs={24} xl={8} key={item.id}>
+      <motion.div
         className="content-wrapper home-hover"
-        onClick={() => {
-          window.location.href = "/intro/price ";
+        initial="hidden"
+        animate="visible"
+        transition={{ ease: "easeOut" }}
+        variants={{
+          hidden: {
+            scale: 0,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+          },
         }}
       >
         <div className="button-group">
@@ -51,17 +66,17 @@ const Recommendations = () => {
             </Tooltip>
           </div>
         </div>
-        <div key="image" className="image">
-          <img src="/product-placeholder.svg" />
+        <div className="image">
+          <img src={"/product-placeholder.svg"} />
         </div>
         <h3 key="h3">{item.nombre}</h3>
         <span key="span">${item.precio}</span>
-      </QueueAnim>
+      </motion.div>
     </Col>
   ));
 
   return (
-    <div className="recommendations-layout-wrapper home-serve-wrapper">
+    <div className="recommendations-layout-wrapper">
       <OverPack className="home-layout" playScale={0.4}>
         <QueueAnim
           type="bottom"
@@ -71,14 +86,18 @@ const Recommendations = () => {
         >
           <h2 key="h2">Productos Recomendados</h2>
           <i key="i" className="line" />
-          <QueueAnim
-            key="content"
-            component={Row}
-            type="bottom"
-            componentProps={{ gutter: 96 }}
-          >
-            {children}
-          </QueueAnim>
+          {screen.xl ? (
+            <QueueAnim
+              key="content"
+              component={Row}
+              type="bottom"
+              componentProps={{ gutter: 96 }}
+            >
+              {children}
+            </QueueAnim>
+          ) : (
+            <Slider />
+          )}
         </QueueAnim>
       </OverPack>
     </div>

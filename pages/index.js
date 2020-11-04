@@ -3,6 +3,7 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Recommendations from "../components/Recommendations";
+import InitialTransition from "../components/InitialTransition";
 
 import Link from "next/link";
 
@@ -17,7 +18,9 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
+
       <Layout className="layout">
+        <InitialTransition />
         <Navbar />
         <Content style={{ padding: "0" }}>
           <Banner />
