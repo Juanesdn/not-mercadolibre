@@ -27,10 +27,7 @@ const Banner = () => {
             },
           }}
         >
-          <h1 key="title">
-            Compra desde la comodidad de tu casa de la manera más confiable y
-            segura.
-          </h1>
+          <h1 key="title">Compra desde la comodidad de tu casa</h1>
           <div key="buy-button" className="btn__primary">
             <ShoppingOutlined
               style={{
@@ -45,7 +42,9 @@ const Banner = () => {
       </Col>
       <Col xs={24} lg={12} xl={12}>
         <div className="home-banner-image-wrapper">
-          <BannerImage />
+          <div className="image-wrapper">
+            <BannerImage />
+          </div>
         </div>
       </Col>
     </Row>

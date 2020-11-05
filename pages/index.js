@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
 
       <Layout className="layout">
-        <InitialTransition />
+        {/* <InitialTransition /> */}
         <Navbar />
         <Content style={{ padding: "0" }}>
           <Banner />

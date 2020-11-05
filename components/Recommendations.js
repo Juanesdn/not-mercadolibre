@@ -77,7 +77,7 @@ const Recommendations = () => {
 
   return (
     <div className="recommendations-layout-wrapper">
-      <OverPack className="home-layout" playScale={0.4}>
+      <OverPack className="home-layout container" playScale={0.4}>
         <QueueAnim
           type="bottom"
           key="home-func"
