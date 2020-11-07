@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, Typography } from "antd";
+import Link from "next/link";
+import { Menu } from "antd";
 import {
   HomeTwoTone,
   ShopTwoTone,

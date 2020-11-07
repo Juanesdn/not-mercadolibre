@@ -11,7 +11,7 @@ const BannerImage = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie options={defaultOptions} isClickToPauseDisabled />;
 };
 
 export default BannerImage;

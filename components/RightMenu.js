@@ -1,4 +1,5 @@
 import { Menu } from "antd";
+import Link from "next/link";
 
 import { UserOutlined, UserAddOutlined } from "@ant-design/icons";
 
@@ -9,9 +10,11 @@ const RightMenu = ({ mode }) => {
         icon={<UserOutlined style={{ fontSize: "18px", color: "#ff740e" }} />}
         key="signin"
       >
-        <a className="nav-item" href="">
-          Sign in
-        </a>
+        <Link href="/login">
+          <a className="nav-item" href="">
+            Sign in
+          </a>
+        </Link>
       </Menu.Item>
       <Menu.Item key="signup">
         <div className="btn__primary">
