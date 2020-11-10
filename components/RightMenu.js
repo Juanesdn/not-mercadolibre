@@ -17,10 +17,12 @@ const RightMenu = ({ mode }) => {
         </Link>
       </Menu.Item>
       <Menu.Item key="signup">
-        <div className="btn__primary">
-          <UserAddOutlined style={{ fontSize: "18px", color: "#ffffff" }} />
-          Sign up
-        </div>
+        <Link href="/signup">
+          <div className="btn__primary">
+            <UserAddOutlined style={{ fontSize: "18px", color: "#ffffff" }} />
+            Sign up
+          </div>
+        </Link>
       </Menu.Item>
     </Menu>
   );

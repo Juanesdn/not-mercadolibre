@@ -1,4 +1,3 @@
-import QueueAnim from "rc-queue-anim";
 import { Row, Col } from "antd";
 import { ShoppingOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
