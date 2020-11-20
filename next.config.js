@@ -6,6 +6,6 @@ module.exports = withBundleAnalyzer();
 
 module.exports = {
   env: {
-    API_URL: "http://localhost:5000",
+    API_URL: "https://api2.buyfy.digital",
   },
 };
