@@ -37,7 +37,7 @@ const MyLayout = ({ children }) => {
         <Navbar />
         <Content style={{ padding: "0" }}>{children}</Content>
         <Footer style={{ textAlign: "center" }}>
-          Not Mercadolibre ©2020 Created by Juan De La Cruz & Luis Orozco
+          Buyfy ©2020 Created by Juan De La Cruz & Luis Orozco
         </Footer>
       </Layout>
     </React.Fragment>

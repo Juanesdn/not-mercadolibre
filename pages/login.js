@@ -119,7 +119,7 @@ const Login = () => {
             <Link href="#">Olvidaste tu contraseña?</Link>
             <Link href="/signup">No tienes una cuenta? Registrate aquí</Link>
           </div>
-          <div className="copyright">Copyright © Not mercadolibre 2020.</div>
+          <div className="copyright">Copyright © Buyfy 2020.</div>
         </motion.div>
       </Col>
     </Row>

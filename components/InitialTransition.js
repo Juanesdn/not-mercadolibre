@@ -66,7 +66,7 @@ const InitialTransition = () => {
           y="50%"
           style={{ fill: "url(#pattern)" }}
         >
-          Not Mercadolibre
+          Buyfy
         </text>
       </motion.svg>
     </motion.div>

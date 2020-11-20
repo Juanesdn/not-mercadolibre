@@ -119,7 +119,7 @@ const Signup = () => {
               <Link href="login">Ya tienes una cuenta? Inicia sesión</Link>
             </Col>
           </Row>
-          <div className="copyright">Copyright © Not mercadolibre 2020.</div>
+          <div className="copyright">Copyright © Buyfy 2020.</div>
         </div>
       </div>
     </motion.div>
