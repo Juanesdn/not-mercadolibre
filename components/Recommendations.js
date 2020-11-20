@@ -10,18 +10,24 @@ const { useBreakpoint } = Grid;
 const data = [
   {
     id: 0,
-    nombre: "test1",
-    precio: "999",
+    nombre: "Camisa",
+    precio: "36000",
+    image_url:
+      "https://ae01.alicdn.com/kf/H55a330a1ef76441192aef1eb1aea559eK/Camisa-vaquera-ajustada-para-hombre-Rebeca-de-manga-larga-informal-para-primavera-y-oto-o-2020.jpg_q50.jpg",
   },
   {
     id: 1,
-    nombre: "test2",
-    precio: "999",
+    nombre: "Set de vasos",
+    precio: "80000",
+    image_url:
+      "https://media.aws.alkosto.com/media/catalog/product/cache/6/image/69ace863370f34bdf190e4e164b6e123/7/7/7702147244578-1.jpg",
   },
   {
     id: 2,
-    nombre: "test3",
-    precio: "999",
+    nombre: "Alexa echo dot",
+    precio: "120000",
+    image_url:
+      "https://cdn.shopify.com/s/files/1/0071/8087/7909/products/amazon_echo_dot_3_gen_gris_oscuro_altavoz_inteligente_alexa_01_l-2_1200x1200.jpg?v=1601314022",
   },
 ];
 
@@ -67,7 +73,7 @@ const Recommendations = () => {
           </div>
         </div>
         <div className="image">
-          <img src={"/product-placeholder.svg"} />
+          <img width={200} height={200} src={item.image_url} />
         </div>
         <h3 key="h3">{item.nombre}</h3>
         <span key="span">${item.precio}</span>

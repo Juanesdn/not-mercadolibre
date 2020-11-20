@@ -11,6 +11,11 @@ const initialState = {
   token: null,
   cart: [],
   cartPrice: 0,
+  direccion: "",
+  telefono: "",
+  ciudad: "",
+  pais: "",
+  codPostal: "",
 };
 
 const userReducer = (state, action) => {
