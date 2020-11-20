@@ -10,7 +10,7 @@ const MyLayout = ({ children }) => {
   const dispatch = useUserDispatch();
 
   useEffect(() => {
-    const token = sessionStorage.getItem("acces_token");
+    const token = sessionStorage.getItem("access_token");
     if (token) {
       dispatch({
         type: "reload_token",
@@ -22,11 +22,6 @@ const MyLayout = ({ children }) => {
   return (
     <React.Fragment>
       <Head>
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        />
-
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
           rel="stylesheet"

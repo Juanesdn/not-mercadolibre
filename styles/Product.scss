@@ -73,6 +73,9 @@
               justify-content: center;
               align-items: center;
               border-radius: 100px;
+              &:hover {
+                cursor: pointer;
+              }
             }
             .add {
               border: 1px solid #282828;

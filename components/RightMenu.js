@@ -10,14 +10,14 @@ import {
 const { Title } = Typography;
 
 const RightMenu = ({ mode }) => {
-  const { token } = useUserState();
+  const { token, cart } = useUserState();
 
   return (
     <>
       {token ? (
         <>
           <Title style={{ display: "inline-block", marginRight: 10 }} level={4}>
-            0
+            {cart.length}
           </Title>
           <Tooltip title="Shopping Cart">
             <Button

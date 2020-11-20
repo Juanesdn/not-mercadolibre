@@ -9,6 +9,8 @@ const initialState = {
   first_name: "",
   last_name: "",
   token: null,
+  cart: [],
+  cartPrice: 0,
 };
 
 const userReducer = (state, action) => {
@@ -17,13 +19,49 @@ const userReducer = (state, action) => {
       return { ...state, [action.input]: action.payload };
     }
     case "clear_context": {
-      return { email: "", password: "", first_name: "", last_name: "" };
+      return {
+        email: "",
+        password: "",
+        first_name: "",
+        last_name: "",
+        token: null,
+        cart: [],
+        cartPrice: 0,
+      };
     }
     case "user_logged_in": {
       return { ...state, token: action.payload };
     }
     case "reload_token": {
       return { ...state, token: action.payload };
+    }
+    case "add_to_cart": {
+      let price = 0;
+      state.cart.map((item) => {
+        price = price + item.product.price * item.qty;
+      });
+
+      const obj = action.payload;
+
+      price = price + obj.product.price * obj.qty;
+
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+        cartPrice: price,
+      };
+    }
+    case "logout": {
+      sessionStorage.removeItem("access_token");
+      return {
+        email: "",
+        password: "",
+        first_name: "",
+        last_name: "",
+        token: null,
+        cart: [],
+        cartPrice: 0,
+      };
     }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

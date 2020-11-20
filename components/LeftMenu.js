@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { withRouter } from "next/router";
+import { useUser } from "../contexts/UserContext";
 import Link from "next/link";
 import { Menu } from "antd";
 import {
   HomeTwoTone,
   ShopTwoTone,
-  MessageTwoTone,
   IdcardTwoTone,
+  LogoutOutlined,
 } from "@ant-design/icons";
 
 const LeftMenu = ({ mode, router }) => {
   const [currItem, setCurrItem] = useState(router.pathname);
+  const [{ token }, dispatch] = useUser();
 
   const changeCurrentItem = (e) => {
     setCurrItem(e.key);
@@ -50,6 +52,26 @@ const LeftMenu = ({ mode, router }) => {
           </a>
         </Link>
       </Menu.Item>
+      {token ? (
+        <Menu.Item
+          icon={
+            <LogoutOutlined
+              twoToneColor="#ff740e"
+              style={{ fontSize: "18px" }}
+            />
+          }
+        >
+          <Link href="/">
+            <a
+              className="nav-item"
+              href=""
+              onClick={() => dispatch({ type: "logout" })}
+            >
+              Cerrar Sesión
+            </a>
+          </Link>
+        </Menu.Item>
+      ) : null}
     </Menu>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { Avatar, Row, Col, Input, Button } from "antd";
+import { Avatar, Row, Col, Input, Button, Spin } from "antd";
 import { IdcardOutlined } from "@ant-design/icons";
 import { useUser } from "../contexts/UserContext";
 import useAuth from "../hooks/useAuth";
@@ -20,7 +20,7 @@ const registerVariants = {
 
 const Signup = () => {
   const [{ first_name, last_name, email, password }, dispatch] = useUser();
-  const { SignUp } = useAuth();
+  const { SignUp, loading, error } = useAuth();
 
   useEffect(() => {
     dispatch({
@@ -40,6 +40,11 @@ const Signup = () => {
         <Avatar className="icon" size="large" icon={<IdcardOutlined />} />
         <h1 className="h5">Registrarse</h1>
         <div className="registration-form">
+          {error ? (
+            <motion.div className="text-error">
+              Ocurrió un error por nuestra parte :C intentalo mas tarde
+            </motion.div>
+          ) : null}
           <Row gutter={16}>
             <Col xs={24} sm={12}>
               <Input
@@ -112,7 +117,7 @@ const Signup = () => {
             block
             onClick={() => SignUp(email, password, first_name, last_name)}
           >
-            INICIAR SESIÓN
+            {loading ? <Spin /> : "REGISTRARSE"}
           </Button>
           <Row justify="end">
             <Col>

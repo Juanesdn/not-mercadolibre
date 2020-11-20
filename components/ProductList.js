@@ -34,7 +34,7 @@ const ProductList = ({ products }) => {
     <motion.div variants={stagger}>
       <Row justify="center" className="product-row">
         {products.map((product, index) => (
-          <Col className="card-container" key={index} xs={24} lg={12}>
+          <Col className="card-container" key={index} xs={16} lg={12}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
