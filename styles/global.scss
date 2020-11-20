@@ -7,6 +7,9 @@
 @import "InitialTransition";
 @import "Login";
 @import "Signup";
+@import "Shop";
+@import "Product";
+@import "About";
 
 *,
 *:before,
@@ -74,11 +77,13 @@ body {
     width: 750px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;

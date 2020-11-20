@@ -1,10 +1,24 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import { Layout } from "antd";
 import Navbar from "./Navbar";
+import { useUserDispatch } from "../contexts/UserContext";
 
 const { Content, Footer } = Layout;
 
 const MyLayout = ({ children }) => {
+  const dispatch = useUserDispatch();
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("acces_token");
+    if (token) {
+      dispatch({
+        type: "reload_token",
+        payload: token,
+      });
+    }
+  });
+
   return (
     <React.Fragment>
       <Head>

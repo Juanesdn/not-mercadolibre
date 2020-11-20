@@ -3,12 +3,6 @@ import { Drawer, Button } from "antd";
 import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
 
-const centerStyleNavbar = {
-  position: "relative",
-  display: "flex",
-  justifyContent: "center",
-};
-
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
 

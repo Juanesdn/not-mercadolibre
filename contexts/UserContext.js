@@ -4,14 +4,26 @@ const UserStateContext = createContext();
 const UserDispatchContext = createContext();
 
 const initialState = {
-  username: "",
+  email: "",
   password: "",
+  first_name: "",
+  last_name: "",
+  token: null,
 };
 
 const userReducer = (state, action) => {
   switch (action.type) {
     case "input_change": {
       return { ...state, [action.input]: action.payload };
+    }
+    case "clear_context": {
+      return { email: "", password: "", first_name: "", last_name: "" };
+    }
+    case "user_logged_in": {
+      return { ...state, token: action.payload };
+    }
+    case "reload_token": {
+      return { ...state, token: action.payload };
     }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

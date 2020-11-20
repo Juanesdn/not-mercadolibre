@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { withRouter } from "next/router";
 import Link from "next/link";
 import { Menu } from "antd";
 import {
@@ -8,11 +9,10 @@ import {
   IdcardTwoTone,
 } from "@ant-design/icons";
 
-const LeftMenu = ({ mode }) => {
-  const [currItem, setCurrItem] = useState("home");
+const LeftMenu = ({ mode, router }) => {
+  const [currItem, setCurrItem] = useState(router.pathname);
 
   const changeCurrentItem = (e) => {
-    console.log("click ", e);
     setCurrItem(e.key);
   };
 
@@ -22,44 +22,36 @@ const LeftMenu = ({ mode }) => {
         icon={
           <HomeTwoTone twoToneColor="#ff740e" style={{ fontSize: "18px" }} />
         }
-        key="home"
+        key="/"
       >
-        <a className="nav-item" href="">
-          Home
-        </a>
+        <Link href="/">
+          <a className="nav-item">Inicio</a>
+        </Link>
       </Menu.Item>
       <Menu.Item
         icon={
           <ShopTwoTone twoToneColor="#ff740e" style={{ fontSize: "18px" }} />
         }
-        key="shop"
+        key="/shop"
       >
-        <a className="nav-item" href="">
-          Shop
-        </a>
-      </Menu.Item>
-      <Menu.Item
-        icon={
-          <MessageTwoTone twoToneColor="#ff740e" style={{ fontSize: "18px" }} />
-        }
-        key="contact"
-      >
-        <a className="nav-item" href="">
-          Contact us
-        </a>
+        <Link href="/shop">
+          <a className="nav-item">Tienda</a>
+        </Link>
       </Menu.Item>
       <Menu.Item
         icon={
           <IdcardTwoTone twoToneColor="#ff740e" style={{ fontSize: "18px" }} />
         }
-        key="about"
+        key="/about"
       >
-        <a className="nav-item" href="">
-          About Us
-        </a>
+        <Link href="about">
+          <a className="nav-item" href="">
+            Sobre Nosotros
+          </a>
+        </Link>
       </Menu.Item>
     </Menu>
   );
 };
 
-export default LeftMenu;
+export default withRouter(LeftMenu);

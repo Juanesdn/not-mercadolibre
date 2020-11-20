@@ -1,12 +1,16 @@
+import { useEffect } from "react";
+import Link from "next/link";
 import { Avatar, Row, Col, Input, Button } from "antd";
 import { LockOutlined, UserOutlined, IdcardOutlined } from "@ant-design/icons";
 import Lottie from "react-lottie";
-import animationData from "../public/lotties/login-animation.json";
-import { useUser } from "../contexts/UserContext";
 import { motion } from "framer-motion";
+import { useUser } from "../contexts/UserContext";
+import useAuth from "../hooks/useAuth";
+import animationData from "../public/lotties/login-animation.json";
 
 const Login = () => {
-  const [state, dispatch] = useUser();
+  const [{ email, password }, dispatch] = useUser();
+  const { SignIn } = useAuth();
 
   const defaultOptions = {
     loop: true,
@@ -44,12 +48,19 @@ const Login = () => {
     },
   };
 
+  useEffect(() => {
+    dispatch({
+      type: "clear_context",
+    });
+  }, []);
+
   return (
     <Row className="root">
       <Col xs={0} sm={8} md={14} className="login-image">
         <motion.div
           initial="hidden"
           animate="show"
+          exit="hidden"
           variants={animationVariants}
         >
           <Lottie
@@ -76,11 +87,11 @@ const Login = () => {
             onChange={(e) =>
               dispatch({
                 type: "input_change",
-                input: "username",
+                input: "email",
                 payload: e.target.value,
               })
             }
-            value={state.username}
+            value={email}
           />
           <Input.Password
             className="input"
@@ -94,14 +105,19 @@ const Login = () => {
                 payload: e.target.value,
               })
             }
-            value={state.password}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                SignIn(email, password);
+              }
+            }}
+            value={password}
           />
-          <Button className="btn" block>
+          <Button className="btn" block onClick={() => SignIn(email, password)}>
             INICIAR SESIÓN
           </Button>
           <div className="login-links">
-            <a href="#">Olvidaste tu contraseña?</a>
-            <a href="#">No tienes una cuenta? Registrate aquí</a>
+            <Link href="#">Olvidaste tu contraseña?</Link>
+            <Link href="/signup">No tienes una cuenta? Registrate aquí</Link>
           </div>
           <div className="copyright">Copyright © Not mercadolibre 2020.</div>
         </motion.div>
